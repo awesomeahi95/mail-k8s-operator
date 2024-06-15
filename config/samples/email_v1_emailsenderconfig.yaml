@@ -1,0 +1,6 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: EmailSenderConfig
+metadata:
+  name: emailsenderconfig-sample
+spec:
+  # TODO(user): Add fields here

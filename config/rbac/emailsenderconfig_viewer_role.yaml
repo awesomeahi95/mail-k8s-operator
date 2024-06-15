@@ -1,0 +1,20 @@
+# permissions for end users to view emailsenderconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: emailsenderconfig-viewer-role
+rules:
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emailsenderconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emailsenderconfigs/status
+  verbs:
+  - get

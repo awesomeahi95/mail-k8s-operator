@@ -1,0 +1,8 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: EmailSenderConfig
+metadata:
+  name: my-email-sender-config
+  namespace: system
+spec:
+  provider: "Mailgun"
+  apiKey: "your-mailgun-api-key"

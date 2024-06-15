@@ -1,0 +1,8 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: Email
+metadata:
+  name: test-email
+spec:
+  to: "test@example.com"
+  subject: "Test Email"
+  body: "This is a test email."

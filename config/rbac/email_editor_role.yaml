@@ -1,0 +1,24 @@
+# permissions for end users to edit emails.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: email-editor-role
+rules:
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emails
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emails/status
+  verbs:
+  - get

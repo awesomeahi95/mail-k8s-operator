@@ -1,0 +1,25 @@
+domain: mailerlitetask.com
+layout:
+- go.kubebuilder.io/v3
+projectName: email-operator
+repo: github.com/awesomeahi95/email-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: mailerlitetask.com
+  group: email
+  kind: EmailSenderConfig
+  path: github.com/awesomeahi95/email-operator/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: mailerlitetask.com
+  group: email
+  kind: Email
+  path: github.com/awesomeahi95/email-operator/api/v1
+  version: v1
+version: "3"

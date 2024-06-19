@@ -30,4 +30,3 @@ COPY --from=builder /workspace/manager .
 
 # Command to run the binary
 ENTRYPOINT ["/root/manager"]
-

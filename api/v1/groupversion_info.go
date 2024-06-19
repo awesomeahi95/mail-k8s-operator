@@ -15,8 +15,8 @@ limitations under the License.
 */
 
 // Package v1 contains API Schema definitions for the email v1 API group
-//+kubebuilder:object:generate=true
-//+groupName=email.mailerlitetask.com
+// +kubebuilder:object:generate=true
+// +groupName=email.mailerlitetask.com
 package v1
 
 import (

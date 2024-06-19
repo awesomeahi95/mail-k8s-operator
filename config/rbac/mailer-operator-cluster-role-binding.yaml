@@ -1,13 +1,12 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
-  name: leader-election-rolebinding
-  namespace: mailer-operator-system
+  name: mailer-operator-cluster-role-binding
 subjects:
   - kind: ServiceAccount
     name: controller-manager
     namespace: mailer-operator-system
 roleRef:
-  kind: Role
-  name: leader-election-role
+  kind: ClusterRole
+  name: mailer-operator-cluster-role
   apiGroup: rbac.authorization.k8s.io

@@ -2,11 +2,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: manager-rolebinding
-  namespace: system
+  namespace: mailer-operator-system
 subjects:
 - kind: ServiceAccount
   name: controller-manager
-  namespace: system
+  namespace: mailer-operator-system
 roleRef:
   kind: Role
   name: manager-role

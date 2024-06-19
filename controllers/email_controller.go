@@ -1,36 +1,21 @@
-/*
-Copyright 2024.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 package controllers
 
 import (
-	"context"
+        "context"
 
-	"k8s.io/apimachinery/pkg/runtime"
-	ctrl "sigs.k8s.io/controller-runtime"
-	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/log"
+        "k8s.io/apimachinery/pkg/api/errors"
+        "k8s.io/apimachinery/pkg/runtime"
+        ctrl "sigs.k8s.io/controller-runtime"
+        "sigs.k8s.io/controller-runtime/pkg/client"
+        "sigs.k8s.io/controller-runtime/pkg/log"
 
-	emailv1 "github.com/awesomeahi95/email-operator/api/v1"
+	emailv1 "github.com/awesomeahi95/mailerlite/api/v1"
 )
 
-// EmailReconciler reconciles a Email object
+// EmailReconciler reconciles an Email object
 type EmailReconciler struct {
-	client.Client
-	Scheme *runtime.Scheme
+        client.Client
+        Scheme *runtime.Scheme
 }
 
 //+kubebuilder:rbac:groups=email.mailerlitetask.com,resources=emails,verbs=get;list;watch;create;update;patch;delete
@@ -39,24 +24,59 @@ type EmailReconciler struct {
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
-// TODO(user): Modify the Reconcile function to compare the state specified by
-// the Email object against the actual cluster state, and then
-// perform operations to make the cluster state reflect the state specified by
-// the user.
-//
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.10.0/pkg/reconcile
 func (r *EmailReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = log.FromContext(ctx)
+        log := log.FromContext(ctx)
 
-	// TODO(user): your logic here
+        // Fetch the Email instance
+        var email emailv1.Email
+        if err := r.Get(ctx, req.NamespacedName, &email); err != nil {
+                if errors.IsNotFound(err) {
+                        // Email resource not found. Ignoring since object must be deleted.
+                        log.Info("Email resource not found. Ignoring since object must be deleted.")
+                        return ctrl.Result{}, nil
+                }
+                // Error reading the object - requeue the request.
+                log.Error(err, "Failed to get Email")
+                return ctrl.Result{}, err
+        }
 
-	return ctrl.Result{}, nil
+        log.Info("Email resource found", "email", email)
+
+        // Fetch the EmailSenderConfig instance
+        var emailSenderConfig emailv1.EmailSenderConfig
+        if err := r.Get(ctx, client.ObjectKey{Name: email.Spec.SenderConfigRef, Namespace: req.Namespace}, &emailSenderConfig); err != nil {
+                log.Error(err, "Failed to get EmailSenderConfig", "EmailSenderConfig", email.Spec.SenderConfigRef)
+                email.Status.DeliveryStatus = "Failed"
+                email.Status.Error = "EmailSenderConfig not found"
+                if updateErr := r.Status().Update(ctx, &email); updateErr != nil {
+                        log.Error(updateErr, "Failed to update Email status")
+                }
+                return ctrl.Result{}, client.IgnoreNotFound(err)
+        }
+
+        log.Info("EmailSenderConfig found", "EmailSenderConfig", emailSenderConfig)
+
+        // Simulate sending email
+        log.Info("Simulating email sending", "recipient", email.Spec.RecipientEmail)
+        email.Status.DeliveryStatus = "Sent"
+        email.Status.MessageID = "some-id"
+        email.Status.Error = ""
+
+        // Update the status of the Email resource
+        if err := r.Status().Update(ctx, &email); err != nil {
+                log.Error(err, "Failed to update Email status")
+                return ctrl.Result{}, err
+        }
+
+        log.Info("Email status updated successfully")
+        return ctrl.Result{}, nil
 }
 
 // SetupWithManager sets up the controller with the Manager.
 func (r *EmailReconciler) SetupWithManager(mgr ctrl.Manager) error {
-	return ctrl.NewControllerManagedBy(mgr).
-		For(&emailv1.Email{}).
-		Complete(r)
+        return ctrl.NewControllerManagedBy(mgr).
+                For(&emailv1.Email{}).
+                Complete(r)
 }

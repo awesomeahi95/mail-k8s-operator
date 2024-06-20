@@ -4,33 +4,49 @@ metadata:
   name: manager-role
   namespace: mailer-operator-system
 rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["services"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["endpoints"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["persistentvolumeclaims"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["apps"]
-    resources: ["replicasets"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["apps"]
-    resources: ["statefulsets"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["events"]
-    verbs: ["create", "patch"]
-  - apiGroups: ["batch"]
-    resources: ["jobs"]
-    verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
-  - apiGroups: ["extensions"]
-    resources: ["ingresses"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["networking.k8s.io"]
-    resources: ["networkpolicies"]
-    verbs: ["get", "list", "watch"]
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emails
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emails/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emails/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emailsenderconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - email.mailerlitetask.com
+  resources:
+  - emailsenderconfigs/status
+  verbs:
+  - get
+  - patch
+  - update

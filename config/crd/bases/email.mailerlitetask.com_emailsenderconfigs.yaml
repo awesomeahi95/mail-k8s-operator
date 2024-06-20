@@ -24,6 +24,8 @@ spec:
               properties:
                 error:
                   type: string
+      subresources:
+        status: {}
   scope: Namespaced
   names:
     plural: emailsenderconfigs

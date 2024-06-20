@@ -2,14 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: controller-manager
-  namespace: mailer-operator-system
 spec:
   template:
     spec:
       containers:
-      - name: manager
-        image: ahilan95/email-operator:latest
-        args:
-        - --health-probe-bind-address=:8081
-        - --metrics-bind-address=127.0.0.1:8080
-        - --leader-elect
+        - name: manager
+          image: ahilan95/email-operator:latest

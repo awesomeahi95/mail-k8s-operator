@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    control-plane: controller-manager
   name: controller-manager
   namespace: mailer-operator-system
 spec:
@@ -15,27 +17,9 @@ spec:
     spec:
       serviceAccountName: controller-manager
       containers:
-        - name: manager
-          image: ahilan95/email-operator:latest
-          command:
-            - /root/manager
-          args:
-            - --health-probe-bind-address=:8081
-            - --metrics-bind-address=127.0.0.1:8080
-            - --leader-elect
-          ports:
-            - containerPort: 9443
-              name: webhook-server
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8081
-            initialDelaySeconds: 15
-            periodSeconds: 20
-          readinessProbe:
-            httpGet:
-              path: /readyz
-              port: 8081
-            initialDelaySeconds: 5
-            periodSeconds: 10
+      - args:
+        - /manager
+        image: ahilan95/email-operator:latest
+        name: manager
+        resources: {}
+      terminationGracePeriodSeconds: 10

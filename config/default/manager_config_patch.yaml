@@ -7,12 +7,11 @@ spec:
   template:
     spec:
       containers:
-      - name: manager
-        volumeMounts:
-        - mountPath: /controller_manager_config.yaml
-          name: manager-config
-          subPath: controller_manager_config.yaml
+        - name: manager
+          volumeMounts:
+            - name: config
+              mountPath: /etc/manager/config
       volumes:
-      - name: manager-config
-        configMap:
-          name: manager-config
+        - name: config
+          configMap:
+            name: controller-manager-config

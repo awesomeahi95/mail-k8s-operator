@@ -9,7 +9,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-        emailv1 "github.com/awesomeahi95/mailerlite/api/v1"
+	emailv1 "github.com/awesomeahi95/mailerlite/api/v1"
 )
 
 // EmailSenderConfigReconciler reconciles an EmailSenderConfig object

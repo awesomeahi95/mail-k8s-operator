@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - manager.yaml
+  - manager_config.yaml
 
 patches:
   - path: controller_manager_config.yaml

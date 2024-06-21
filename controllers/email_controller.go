@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"context"
-	"encoding/base64"
 	"time"
 
 	"github.com/mailersend/mailersend-go"
@@ -169,17 +168,11 @@ func getSecretValues(namespace, secretName string) (string, string, error) {
 	apiToken := string(secret.Data["api-token"])
 	fromEmail := string(secret.Data["from-email"])
 
-	decodedApiToken, err := base64.StdEncoding.DecodeString(apiToken)
-	if err != nil {
-		return "", "", err
-	}
+	log := log.Log
+	log.Info("Fetched API Token", "apiToken", apiToken)
+	log.Info("Fetched From Email", "fromEmail", fromEmail)
 
-	decodedFromEmail, err := base64.StdEncoding.DecodeString(fromEmail)
-	if err != nil {
-		return "", "", err
-	}
-
-	return string(decodedApiToken), string(decodedFromEmail), nil
+	return apiToken, fromEmail, nil
 }
 
 func (r *EmailReconciler) SetupWithManager(mgr ctrl.Manager) error {

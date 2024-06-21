@@ -5,7 +5,7 @@
 <summary>Show/Hide</summary>
 
 - [Task](#Task)
-- [Achieved Goals](#Achieved Goals)
+- [Achieved Goals](#Achieved_Goals)
 - Important Files Descripton
 - Files Directory Tree
 - What Can be Improved
@@ -21,7 +21,7 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 ## What I Achieved
 <details open>
-<a name="Achieved Goals"></a>
+<a name="Achieved_Goals"></a>
 <summary>Show/Hide</summary>
 - Implemented a Kubernetes operator to manage email sending.
 - Defined custom resources EmailSenderConfig and Email to configure and send emails.

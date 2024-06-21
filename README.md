@@ -55,7 +55,8 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <summary>Show/Hide</summary>
 <br>
 
-- main.go: Entry point for the manager that starts the controller.
+- <strong>main.go</strong>: 
+Entry point for the manager that starts the controller.
 - api/v1/email_types.go: Contains the definitions for the custom resources EmailSenderConfig and Email.
 - controllers/email_controller.go: Contains the logic for reconciling Email resources and sending emails through MailerSend.
 - config/manager/manager.yaml: Kubernetes manifest for deploying the controller manager.

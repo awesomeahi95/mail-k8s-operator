@@ -170,7 +170,7 @@ Create a Kubernetes operator that manages custom resources for configuring email
 
 </details>
 
-a name="Tools_and_Versions_Used"></a>
+<a name="Tools_and_Versions_Used"></a>
 ## Tools and Versions Used
 <details open>
 <summary>Show/Hide</summary>

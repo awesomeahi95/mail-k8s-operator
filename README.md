@@ -10,7 +10,7 @@
 - [What Can be Improved](#What_Can_Be_Improved)
 - [Important Files](#Important_Files)
 - [Files Directory Tree](#Files_Directory_Tree)
-- [Detailed Step-by-Step Instructions](#Detailed_Step-by-Step_Instructions)
+- [Instructions to Deploy Operator](#Instructions_to_Deploy_Operator)
 </details>
 
 <a name="Task"></a>
@@ -169,8 +169,8 @@ Create a Kubernetes operator that manages custom resources for configuring email
 
 </details>
 
-<a name="Detailed_Step-by-Step_Instructions"></a>
-## Detailed Step-by-Step Instructions
+<a name="Instructions_to_Deploy_Operator"></a>
+## Instructions to Deploy Operator
 <details open>
 <summary>Show/Hide</summary>
 <br>
@@ -218,17 +218,10 @@ git clone https://github.com/awesomeahi95/email-operator.git
 cd email-operator
 ```
 
-### Step 2: Build and Push Docker Image
-#### Build the Docker image:
+### Step 2: Build Docker Image
 
 ```
 docker build -t ahilan95/email-operator:latest .
-```
-
-#### Push the Docker image to your Docker repository:
-
-```
-docker push ahilan95/email-operator:latest
 ```
 
 ### Step 3: Setup Minikube and Kubernetes Resources
@@ -278,7 +271,11 @@ kubectl create secret generic mailersend-secret-token \
 #### Change Recipient Email to Preferred Email Address
 
 config/test/mailersend_email.yaml
-recipientEmail: <preferred email address>
+```
+spec:
+  recipientEmail: your-preferred-email@example.com
+```
+
 
 #### Apply the test EmailSenderConfig and Email resources:
 

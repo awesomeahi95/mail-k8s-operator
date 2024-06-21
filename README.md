@@ -55,31 +55,31 @@ Create a Kubernetes operator that manages custom resources for configuring email
 <summary>Show/Hide</summary>
 <br>
 
-- <strong>main.go</strong>: 
+- <strong>*main.go*</strong>: 
 <br>Entry point for the manager that starts the controller.
 
-- <strong>api/v1/email_types.go</strong>: 
+- <strong>*api/v1/email_types.go*</strong>: 
 <br>Contains the definitions for the custom resources EmailSenderConfig and Email.
 
-- <strong>controllers/email_controller.go</strong>: 
+- <strong>*controllers/email_controller.go*</strong>: 
 <br>Contains the logic for reconciling Email resources and sending emails through MailerSend.
 
-- <strong>config/manager/manager.yaml</strong>: 
+- <strong>*config/manager/manager.yaml*</strong>: 
 <br>Kubernetes manifest for deploying the controller manager.
 
-- <strong>config/crd/bases/email.mailerlitetask.com_emails.yaml</strong>: 
+- <strong>*config/crd/bases/email.mailerlitetask.com_emails.yaml*</strong>: 
 <br>Custom Resource Definition (CRD) for the Email resource.
 
-- <strong>config/crd/bases/email.mailerlitetask.com_emailsenderconfigs.yaml</strong>: 
+- <strong>*config/crd/bases/email.mailerlitetask.com_emailsenderconfigs.yaml*</strong>: 
 <br>Custom Resource Definition (CRD) for the EmailSenderConfig resource.
 
-- <strong>config/rbac/role.yaml</strong>, <strong>config/rbac/role_binding.yaml</strong>, <strong>config/rbac/service_account.yaml</strong>: 
+- <strong>*config/rbac/role.yaml*</strong>, <strong>*config/rbac/role_binding.yaml*</strong>, <strong>*config/rbac/service_account.yaml*</strong>: 
 <br>RBAC configuration for the operator.
 
-- <strong>config/test/mailersend_emailsenderconfig.yaml</strong>: 
+- <strong>*config/test/mailersend_emailsenderconfig.yaml*</strong>: 
 <br>Sample EmailSenderConfig resource for MailerSend.
 
-- <strong>config/test/mailersend_email.yaml</strong>: 
+- <strong>*config/test/mailersend_email.yaml*</strong>: 
 <br>Sample Email resource for testing email sending.
 
 </details>
@@ -270,7 +270,7 @@ kubectl create secret generic mailersend-secret-token \
 
 #### Change Recipient Email to Preferred Email Address
 
-config/test/mailersend_email.yaml
+*config/test/mailersend_email.yaml*
 ```
 spec:
   recipientEmail: your-preferred-email@example.com

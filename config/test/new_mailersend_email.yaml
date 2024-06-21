@@ -1,0 +1,10 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: Email
+metadata:
+  name: mailersend-email-new
+  namespace: mailer-operator-system
+spec:
+  recipientEmail: candyahs@gmail.com
+  subject: Test Email from Main Pod Mailersend
+  body: This is a new test email sent from the main pod using MailerSend.
+  senderConfigRef: mailersend-senderconfig

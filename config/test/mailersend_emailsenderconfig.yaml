@@ -1,0 +1,8 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: EmailSenderConfig
+metadata:
+  name: mailersend-senderconfig
+  namespace: mailer-operator-system
+spec:
+  apiTokenSecretRef: mailersend-secret-token
+  senderEmail: example@trial-3z0vkloz2vx47qrx.mlsender.net

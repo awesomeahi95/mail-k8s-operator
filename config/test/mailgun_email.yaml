@@ -1,0 +1,10 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: Email
+metadata:
+  name: actual-mailgun-email
+  namespace: mailer-operator-system
+spec:
+  senderConfigRef: mailgun-senderconfig
+  recipientEmail: candyahs@gmail.com
+  subject: Actual Email
+  body: This is an actual email for testing Mailgun.

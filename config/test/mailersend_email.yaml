@@ -1,0 +1,10 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: Email
+metadata:
+  name: mailersend-email
+  namespace: mailer-operator-system
+spec:
+  senderConfigRef: mailersend-senderconfig
+  recipientEmail: candyahs@gmail.com
+  subject: MailerSend Test Email
+  body: This is a test email from MailerSend.

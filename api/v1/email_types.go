@@ -4,21 +4,20 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-
 // EmailSpec defines the desired state of Email
 type EmailSpec struct {
-	Body            string `json:"body,omitempty"`
-	RecipientEmail  string `json:"recipientEmail,omitempty"`
-	SenderConfigRef string `json:"senderConfigRef,omitempty"`
-	Subject         string `json:"subject,omitempty"`
+	RecipientEmail  string `json:"recipientEmail"`
+	SenderConfigRef string `json:"senderConfigRef"`
+	Subject         string `json:"subject"`
+	Body            string `json:"body"`
+	Provider        string `json:"provider"`
 }
 
 // EmailStatus defines the observed state of Email
 type EmailStatus struct {
-	DeliveryStatus string `json:"deliveryStatus,omitempty"`
+	DeliveryStatus string `json:"deliveryStatus"`
+	MessageID      string `json:"messageID"`
 	Error          string `json:"error,omitempty"`
-	MessageID      string `json:"messageId,omitempty"`
 }
 
 //+kubebuilder:object:root=true

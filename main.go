@@ -56,7 +56,7 @@ func main() {
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
 		LeaderElectionID:       "b50c39f1.mailerlitetask.com",
-		Namespace:              "mailer-operator-system", // Set the namespace the manager operates in
+		Namespace:              "mailer-operator-system", 
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")

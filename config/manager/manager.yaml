@@ -22,4 +22,12 @@ spec:
         image: ahilan95/email-operator:latest
         name: manager
         resources: {}
+        volumeMounts:
+        - name: mailersend-secrets
+          mountPath: "/etc/secrets"
+          readOnly: true
+      volumes:
+      - name: mailersend-secrets
+        secret:
+          secretName: mailersend-secret-token
       terminationGracePeriodSeconds: 10

@@ -1,0 +1,9 @@
+apiVersion: email.mailerlitetask.com/v1
+kind: EmailSenderConfig
+metadata:
+  name: mailgun-senderconfig
+  namespace: mailer-operator-system
+spec:
+  apiTokenSecretRef: mailgun-secret-token
+  senderEmail: youremail@example.com
+  provider: Mailgun

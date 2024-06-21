@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mailersend-test-pod
+  namespace: mailer-operator-system
+spec:
+  containers:
+  - name: mailersend-test-container
+    image: curlimages/curl
+    command: ["sleep", "infinity"]
+    volumeMounts:
+    - name: mailersend-secrets
+      mountPath: "/etc/secrets"
+      readOnly: true
+  volumes:
+  - name: mailersend-secrets
+    secret:
+      secretName: mailersend-secret-token
+

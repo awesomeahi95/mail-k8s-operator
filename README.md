@@ -4,7 +4,7 @@
 <details open>
 <summary>Show/Hide</summary>
 
-- Purpose of the Task
+- [Purpose of the Task](#purpose-of-the-task-purpose)
 - What I Achieved
 - Important Files Descripton
 - Files Directory Tree
@@ -14,8 +14,9 @@
 
 ## Purpose of the Task
 <details open>
+<a name="purpose-of-the-task-purpose"></a>
 <summary>Show/Hide</summary>
-The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
+The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend and Mailgun. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
 </details>
 
 ## What I Achieved
@@ -26,6 +27,16 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Developed a controller to handle email sending using the MailerSend API.
 - Created Kubernetes manifests for deploying the operator.
 - Tested the email sending functionality with MailerSend.
+</details>
+
+## What Can Be Improved
+<details open>
+<summary>Show/Hide</summary>
+- Add support for multiple email providers, such as Mailgun, in addition to MailerSend.
+- Implement more comprehensive error handling and retry mechanisms.
+- Enhance logging and monitoring for better visibility and debugging.
+- Add unit tests and integration tests to ensure the robustness of the operator.
+- Optimize the Docker image for smaller size and faster deployment.
 </details>
 
 ## Important Files Description
@@ -72,19 +83,10 @@ mailer-operator/
 └── main.go
 </details>
 
-## What Can Be Improved
-<details open>
-<summary>Show/Hide</summary>
-- Add support for multiple email providers, such as Mailgun, in addition to MailerSend.
-- Implement more comprehensive error handling and retry mechanisms.
-- Enhance logging and monitoring for better visibility and debugging.
-- Add unit tests and integration tests to ensure the robustness of the operator.
-- Optimize the Docker image for smaller size and faster deployment.
-</details>
-
 ## Detailed Step-by-Step Instructions
 <details open>
 <summary>Show/Hide</summary>
+
 ### Prerequisites
 - Docker
 - Minikube

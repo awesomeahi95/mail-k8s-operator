@@ -67,9 +67,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 </details>
 
+<a name="Files_Directory_Tree"></a>
 ## Files Directory Tree
 <details>
-<a name="Files_Directory_Tree"></a>
 <summary>Show/Hide</summary>
 <br>
 

@@ -6,10 +6,10 @@
 
 - [Task](#Task)
 - [Achieved Goals](#Achieved_Goals)
-- Important Files Descripton
-- Files Directory Tree
-- What Can be Improved
-- Detailed Step-by-Step Instructions
+- [What Can be Improved](#What_Can_Be_Improved)
+- [Important Files](#Important_Files)
+- [Files Directory Tree](#Files_Directory_Tree)
+- [Detailed Step-by-Step Instructions](#Detailed_Step-by-Step_Instructions)
 </details>
 
 ## Task
@@ -32,6 +32,7 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 ## What Can Be Improved
 <details open>
+<a name="What_Can_Be_Improved"></a>
 <summary>Show/Hide</summary>
 - Add support for multiple email providers, such as Mailgun, in addition to MailerSend.
 - Implement more comprehensive error handling and retry mechanisms.
@@ -40,8 +41,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Optimize the Docker image for smaller size and faster deployment.
 </details>
 
-## Important Files Description
+## Important Files
 <details>
+<a name="Important_Files"></a>
 <summary>Show/Hide</summary>
 - main.go: Entry point for the manager that starts the controller.
 - api/v1/email_types.go: Contains the definitions for the custom resources EmailSenderConfig and Email.
@@ -56,6 +58,7 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 ## Files Directory Tree
 <details>
+<a name="Files_Directory_Tree"></a>
 <summary>Show/Hide</summary>
 mailer-operator/
 ├── api/
@@ -86,6 +89,7 @@ mailer-operator/
 
 ## Detailed Step-by-Step Instructions
 <details open>
+<a name="Detailed_Step-by-Step_Instructions"></a>
 <summary>Show/Hide</summary>
 
 ### Prerequisites

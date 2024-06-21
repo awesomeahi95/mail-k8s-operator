@@ -23,8 +23,6 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 </details>
 
-<a name="Achieved_Goals"></a>
-
 ## Achieved Goals
 <details open>
 <a name="Achieved_Goals"></a>
@@ -38,11 +36,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Tested the email sending functionality with MailerSend.
 </details>
 
-<a name="What_Can_Be_Improved"></a>
-
 ## What Can Be Improved
 <details open>
-
+<a name="What_Can_Be_Improved"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -53,11 +49,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Optimize the Docker image for smaller size and faster deployment.
 </details>
 
-<a name="Important_Files"></a>
-
 ## Important Files
 <details>
-
+<a name="Important_Files"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -73,11 +67,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 </details>
 
-<a name="Files_Directory_Tree"></a>
-
 ## Files Directory Tree
 <details>
-
+<a name="Files_Directory_Tree"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -109,11 +101,9 @@ mailer-operator/
 
 </details>
 
-<a name="Detailed_Step-by-Step_Instructions"></a>
-
 ## Detailed Step-by-Step Instructions
 <details open>
-
+<a name="Detailed_Step-by-Step_Instructions"></a>
 <summary>Show/Hide</summary>
 
 

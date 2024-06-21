@@ -293,4 +293,18 @@ kubectl logs -n mailer-operator-system -l control-plane=controller-manager -f
 
 #### Verify that the emails are send successfully to you given email address
 
+<p align="center">
+  <img src="https://github.com/awesomeahi95/mailerlite/images/email-img.png" width=600>
+</p>
+
+#### Verify that the emails are sent using Mailersend Dashboard
+
+<p align="center">
+  <img src="" width=600>
+</p>
+
+<p align="center">
+  <img src="" width=600>
+</p>
+
 </details>

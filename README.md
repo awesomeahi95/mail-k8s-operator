@@ -19,7 +19,7 @@
 <summary>Show/Hide</summary>
 <br>
 
-The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend and Mailgun. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
+Create a Kubernetes operator that manages custom resources for configuring email sending and sending of emails via a transactional email provider like MailerSend. The operator should work cross namespace, and demonstrate sending from multiple providers, please use MailerSend and Mailgun for this task. This current operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
 
 </details>
 

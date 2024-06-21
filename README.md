@@ -56,15 +56,31 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <br>
 
 - <strong>main.go</strong>: 
-Entry point for the manager that starts the controller.
-- api/v1/email_types.go: Contains the definitions for the custom resources EmailSenderConfig and Email.
-- controllers/email_controller.go: Contains the logic for reconciling Email resources and sending emails through MailerSend.
-- config/manager/manager.yaml: Kubernetes manifest for deploying the controller manager.
-- config/crd/bases/email.mailerlitetask.com_emails.yaml: Custom Resource Definition (CRD) for the Email resource.
-- config/crd/bases/email.mailerlitetask.com_emailsenderconfigs.yaml: Custom Resource Definition (CRD) for the EmailSenderConfig resource.
-- config/rbac/role.yaml, config/rbac/role_binding.yaml, config/rbac/service_account.yaml: RBAC configuration for the operator.
-- config/test/mailersend_emailsenderconfig.yaml: Sample EmailSenderConfig resource for MailerSend.
-- config/test/mailersend_email.yaml: Sample Email resource for testing email sending.
+<br>Entry point for the manager that starts the controller.
+
+- <strong>api/v1/email_types.go</strong>: 
+<br>Contains the definitions for the custom resources EmailSenderConfig and Email.
+
+- <strong>controllers/email_controller.go</strong>: 
+<br>Contains the logic for reconciling Email resources and sending emails through MailerSend.
+
+- <strong>config/manager/manager.yaml</strong>: 
+<br>Kubernetes manifest for deploying the controller manager.
+
+- <strong>config/crd/bases/email.mailerlitetask.com_emails.yaml</strong>: 
+<br>Custom Resource Definition (CRD) for the Email resource.
+
+- <strong>config/crd/bases/email.mailerlitetask.com_emailsenderconfigs.yaml</strong>: 
+<br>Custom Resource Definition (CRD) for the EmailSenderConfig resource.
+
+- <strong>config/rbac/role.yaml</strong>, <strong>config/rbac/role_binding.yaml</strong>, <strong>config/rbac/service_account.yaml</strong>: 
+<br>RBAC configuration for the operator.
+
+- <strong>config/test/mailersend_emailsenderconfig.yaml</strong>: 
+<br>Sample EmailSenderConfig resource for MailerSend.
+
+- <strong>config/test/mailersend_email.yaml</strong>: 
+<br>Sample Email resource for testing email sending.
 
 </details>
 

@@ -300,11 +300,11 @@ kubectl logs -n mailer-operator-system -l control-plane=controller-manager -f
 #### Verify that the emails are sent using Mailersend Dashboard
 
 <p align="center">
-  <img src="" width=600>
+  <img src="https://github.com/awesomeahi95/mailerlite/blob/main/images/email-domain.png" width=600>
 </p>
 
 <p align="center">
-  <img src="" width=600>
+  <img src="https://github.com/awesomeahi95/mailerlite/blob/main/images/email-activity.png" width=600>
 </p>
 
 </details>

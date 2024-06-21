@@ -4,23 +4,24 @@
 <details open>
 <summary>Show/Hide</summary>
 
-- [Purpose of the Task](#purpose-of-the-task-purpose)
-- What I Achieved
+- [Task](#Task)
+- [Achieved Goals](#Achieved Goals)
 - Important Files Descripton
 - Files Directory Tree
 - What Can be Improved
 - Detailed Step-by-Step Instructions
 </details>
 
-## Purpose of the Task
+## Task
 <details open>
-<a name="purpose-of-the-task-purpose"></a>
+<a name="Task"></a>
 <summary>Show/Hide</summary>
 The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend and Mailgun. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
 </details>
 
 ## What I Achieved
 <details open>
+<a name="Achieved Goals"></a>
 <summary>Show/Hide</summary>
 - Implemented a Kubernetes operator to manage email sending.
 - Defined custom resources EmailSenderConfig and Email to configure and send emails.

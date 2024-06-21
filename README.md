@@ -12,14 +12,19 @@
 - [Detailed Step-by-Step Instructions](#Detailed_Step-by-Step_Instructions)
 </details>
 
+<a name="Task"></a>
+
 ## Task
 <details open>
-<a name="Task"></a>
 <summary>Show/Hide</summary>
+
 The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend and Mailgun. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
+
 </details>
 
-## What I Achieved
+<a name="Achieved_Goals"></a>
+
+## Achieved Goals
 <details open>
 <a name="Achieved_Goals"></a>
 <summary>Show/Hide</summary>
@@ -30,9 +35,11 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Tested the email sending functionality with MailerSend.
 </details>
 
+<a name="What_Can_Be_Improved"></a>
+
 ## What Can Be Improved
 <details open>
-<a name="What_Can_Be_Improved"></a>
+
 <summary>Show/Hide</summary>
 - Add support for multiple email providers, such as Mailgun, in addition to MailerSend.
 - Implement more comprehensive error handling and retry mechanisms.
@@ -41,9 +48,11 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Optimize the Docker image for smaller size and faster deployment.
 </details>
 
+<a name="Important_Files"></a>
+
 ## Important Files
 <details>
-<a name="Important_Files"></a>
+
 <summary>Show/Hide</summary>
 
 - main.go: Entry point for the manager that starts the controller.
@@ -58,9 +67,11 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 </details>
 
+<a name="Files_Directory_Tree"></a>
+
 ## Files Directory Tree
 <details>
-<a name="Files_Directory_Tree"></a>
+
 <summary>Show/Hide</summary>
 
 mailer-operator/
@@ -91,9 +102,11 @@ mailer-operator/
 
 </details>
 
+<a name="Detailed_Step-by-Step_Instructions"></a>
+
 ## Detailed Step-by-Step Instructions
 <details open>
-<a name="Detailed_Step-by-Step_Instructions"></a>
+
 <summary>Show/Hide</summary>
 
 ### Prerequisites

@@ -73,12 +73,13 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <summary>Show/Hide</summary>
 <br>
 
-mailer-operator/
-├── api/
-│   └── v1/
-│       ├── email_types.go
-│       └── zz_generated.deepcopy.go
-├── config/
+*mailer-operator/
+    *api/
+        *v1/
+            *email_types.go
+            *emailsenderconfig_types.go
+            *groupversion_info.go
+            *zz_generated.deepcopy.go
 │   ├── crd/
 │   │   └── bases/
 │   │       ├── email.mailerlitetask.com_emails.yaml
@@ -113,7 +114,7 @@ mailer-operator/
 - kubectl
 
 
-#### - Windows
+#### Windows
 <details>
 <summary>Show/Hide</summary>
 
@@ -123,7 +124,7 @@ mailer-operator/
 
 </details>
 
-#### - macOS
+#### macOS
 <details>
 <summary>Show/Hide</summary>
 
@@ -133,7 +134,7 @@ mailer-operator/
 
 </details>
 
-#### - Linux
+#### Linux
 <details>
 <summary>Show/Hide</summary>
 
@@ -151,20 +152,20 @@ cd email-operator
 ```
 
 ### Step 2: Build and Push Docker Image
-#### - Build the Docker image:
+#### Build the Docker image:
 
 ```
 docker build -t ahilan95/email-operator:latest .
 ```
 
-#### - Push the Docker image to your Docker repository:
+#### Push the Docker image to your Docker repository:
 
 ```
 docker push ahilan95/email-operator:latest
 ```
 
 ### Step 3: Setup Minikube and Kubernetes Resources
-#### - Start Minikube:
+#### Start Minikube:
 
 ```
 minikube start
@@ -176,14 +177,14 @@ minikube start
 kubectl create namespace mailer-operator-system
 ```
 
-#### - Apply the CRDs:
+#### Apply the CRDs:
 
 ```
 kubectl apply -f config/crd/bases/email.mailerlitetask.com_emails.yaml
 kubectl apply -f config/crd/bases/email.mailerlitetask.com_emailsenderconfigs.yaml
 ```
 
-#### - Apply the RBAC configuration:
+#### Apply the RBAC configuration:
 
 ```
 kubectl apply -f config/rbac/service_account.yaml
@@ -191,14 +192,14 @@ kubectl apply -f config/rbac/role.yaml
 kubectl apply -f config/rbac/role_binding.yaml
 ```
 
-#### - Apply the deployment:
+#### Apply the deployment:
 
 ```
 kubectl apply -f config/manager/manager.yaml
 ```
 
 ### Step 4: Create Secrets and Resources
-#### - Create Secret for MailerSend API Token
+#### Create Secret for MailerSend API Token
 
 ```
 kubectl create secret generic mailersend-secret-token \
@@ -207,12 +208,12 @@ kubectl create secret generic mailersend-secret-token \
   -n mailer-operator-system
 ```
 
-#### - Change Recipient Email to Preferred Email Address
+#### Change Recipient Email to Preferred Email Address
 
 config/test/mailersend_email.yaml
 recipientEmail: <preferred email address>
 
-#### - Apply the test EmailSenderConfig and Email resources:
+#### Apply the test EmailSenderConfig and Email resources:
 
 ```
 kubectl apply -f config/test/mailersend_emailsenderconfig.yaml
@@ -220,12 +221,12 @@ kubectl apply -f config/test/mailersend_email.yaml
 ```
 
 ### Step 5: Verify the Deployment
-#### - Check the logs of the controller manager to ensure emails are being sent:
+#### Check the logs of the controller manager to ensure emails are being sent:
 
 ```
 kubectl logs -n mailer-operator-system -l control-plane=controller-manager -f
 ```
 
-#### - Verify that the emails are send successfully to you given email address
+#### Verify that the emails are send successfully to you given email address
 
 </details>

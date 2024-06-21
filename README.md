@@ -73,13 +73,81 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <summary>Show/Hide</summary>
 <br>
 
-mailer-operator/
-    api/
-        v1/
-            email_types.go
-            emailsenderconfig_types.go
-            groupversion_info.go
-            zz_generated.deepcopy.go
+```plaintext
+.
+├── Dockerfile
+├── Makefile
+├── PROJECT
+├── README.md
+├── api
+│   └── v1
+│       ├── email_types.go
+│       ├── emailsenderconfig_types.go
+│       ├── groupversion_info.go
+│       └── zz_generated.deepcopy.go
+├── bin
+│   └── manager
+├── config
+│   ├── controller_manager_config.yaml
+│   ├── crd
+│   │   ├── bases
+│   │   │   ├── email.mailerlitetask.com_emails.yaml
+│   │   │   ├── email.mailerlitetask.com_emailsenderconfigs.yaml
+│   │   │   └── kustomization.yaml
+│   │   ├── controller_manager_config_crd.yaml
+│   │   └── kustomization.yaml
+│   ├── default
+│   │   ├── kustomization.yaml
+│   │   ├── manager_config_patch.yaml
+│   │   └── manager_image_patch.yaml
+│   ├── kustomization.yaml
+│   ├── manager
+│   │   ├── controller_manager_config.yaml
+│   │   ├── kustomization.yaml
+│   │   ├── manager.yaml
+│   │   └── manager_config.yaml
+│   ├── rbac
+│   │   ├── auth_proxy_client_clusterrole.yaml
+│   │   ├── auth_proxy_role.yaml
+│   │   ├── auth_proxy_role_binding.yaml
+│   │   ├── auth_proxy_service.yaml
+│   │   ├── email_editor_role.yaml
+│   │   ├── email_viewer_role.yaml
+│   │   ├── emailsenderconfig_editor_role.yaml
+│   │   ├── emailsenderconfig_viewer_role.yaml
+│   │   ├── kustomization.yaml
+│   │   ├── leader_election_role.yaml
+│   │   ├── leader_election_role_binding.yaml
+│   │   ├── mailer-operator-cluster-role-binding.yaml
+│   │   ├── mailer-operator-cluster-role.yaml
+│   │   ├── role.yaml
+│   │   ├── role_binding.yaml
+│   │   └── service_account.yaml
+│   ├── samples
+│   │   ├── email_v1_email.yaml
+│   │   ├── email_v1_emailsenderconfig.yaml
+│   │   └── kustomization.yaml
+│   └── test
+│       ├── mailersend-test-pod.yaml
+│       ├── mailersend_email.yaml
+│       ├── mailersend_emailsenderconfig.yaml
+│       ├── mailgun_email.yaml
+│       ├── mailgun_emailsenderconfig.yaml
+│       ├── new_mailersend_email.yaml
+│       └── send_email.sh
+├── controllers
+│   ├── email_controller.go
+│   ├── emailsenderconfig_controller.go
+│   └── suite_test.go
+├── cover.out
+├── fetch-logs.sh
+├── go.mod
+├── go.sum
+├── hack
+│   └── boilerplate.go.txt
+├── mailersend-secret-token.yaml
+├── main.go
+└── manager
 
 
 </details>

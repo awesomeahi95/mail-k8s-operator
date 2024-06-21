@@ -214,8 +214,8 @@ Create a Kubernetes operator that manages custom resources for configuring email
 ### Step 1: Clone the Repository
 
 ```
-git clone https://github.com/awesomeahi95/email-operator.git
-cd email-operator
+git clone https://github.com/awesomeahi95/mailerlite.git
+cd mailerlite
 ```
 
 ### Step 2: Build Docker Image

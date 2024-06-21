@@ -3,6 +3,7 @@
 ## Contents
 <details open>
 <summary>Show/Hide</summary>
+<br>
 
 - [Task](#Task)
 - [Achieved Goals](#Achieved_Goals)
@@ -17,6 +18,7 @@
 ## Task
 <details open>
 <summary>Show/Hide</summary>
+<br>
 
 The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend and Mailgun. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
 
@@ -28,6 +30,8 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <details open>
 <a name="Achieved_Goals"></a>
 <summary>Show/Hide</summary>
+<br>
+
 - Implemented a Kubernetes operator to manage email sending.
 - Defined custom resources EmailSenderConfig and Email to configure and send emails.
 - Developed a controller to handle email sending using the MailerSend API.
@@ -41,6 +45,8 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <details open>
 
 <summary>Show/Hide</summary>
+<br>
+
 - Add support for multiple email providers, such as Mailgun, in addition to MailerSend.
 - Implement more comprehensive error handling and retry mechanisms.
 - Enhance logging and monitoring for better visibility and debugging.
@@ -54,6 +60,7 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <details>
 
 <summary>Show/Hide</summary>
+<br>
 
 - main.go: Entry point for the manager that starts the controller.
 - api/v1/email_types.go: Contains the definitions for the custom resources EmailSenderConfig and Email.
@@ -73,6 +80,7 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <details>
 
 <summary>Show/Hide</summary>
+<br>
 
 mailer-operator/
 ├── api/
@@ -108,6 +116,7 @@ mailer-operator/
 <details open>
 
 <summary>Show/Hide</summary>
+
 
 ### Prerequisites
 - Docker

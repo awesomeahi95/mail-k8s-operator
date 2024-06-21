@@ -1,6 +1,8 @@
 # Mailer Operator
 
 ## Contents
+<details open>
+<summary>Show/Hide</summary>
 
 - Purpose of the Task
 - What I Achieved
@@ -8,21 +10,27 @@
 - Files Directory Tree
 - What Can be Improved
 - Detailed Step-by-Step Instructions
+</details>
 
 ## Purpose of the Task
-
+<details open>
+<summary>Show/Hide</summary>
 The purpose of this task is to create a Kubernetes operator to manage email sending using MailerSend. This operator allows you to define email configurations and emails as custom resources in Kubernetes and handles the sending of emails through the MailerSend API.
+</details>
 
 ## What I Achieved
-
+<details open>
+<summary>Show/Hide</summary>
 - Implemented a Kubernetes operator to manage email sending.
 - Defined custom resources EmailSenderConfig and Email to configure and send emails.
 - Developed a controller to handle email sending using the MailerSend API.
 - Created Kubernetes manifests for deploying the operator.
 - Tested the email sending functionality with MailerSend.
+</details>
 
 ## Important Files Description
-
+<details>
+<summary>Show/Hide</summary>
 - main.go: Entry point for the manager that starts the controller.
 - api/v1/email_types.go: Contains the definitions for the custom resources EmailSenderConfig and Email.
 - controllers/email_controller.go: Contains the logic for reconciling Email resources and sending emails through MailerSend.
@@ -32,9 +40,11 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - config/rbac/role.yaml, config/rbac/role_binding.yaml, config/rbac/service_account.yaml: RBAC configuration for the operator.
 - config/test/mailersend_emailsenderconfig.yaml: Sample EmailSenderConfig resource for MailerSend.
 - config/test/mailersend_email.yaml: Sample Email resource for testing email sending.
+</details>
 
 ## Files Directory Tree
-
+<details>
+<summary>Show/Hide</summary>
 mailer-operator/
 ├── api/
 │   └── v1/
@@ -60,28 +70,38 @@ mailer-operator/
 ├── go.mod
 ├── go.sum
 └── main.go
+</details>
 
 ## What Can Be Improved
-
+<details open>
+<summary>Show/Hide</summary>
 - Add support for multiple email providers, such as Mailgun, in addition to MailerSend.
 - Implement more comprehensive error handling and retry mechanisms.
 - Enhance logging and monitoring for better visibility and debugging.
 - Add unit tests and integration tests to ensure the robustness of the operator.
 - Optimize the Docker image for smaller size and faster deployment.
+</details>
 
 ## Detailed Step-by-Step Instructions
-
+<details open>
+<summary>Show/Hide</summary>
 ### Prerequisites
 - Docker
 - Minikube
 - kubectl
+</details>
 
 #### Windows
+<details>
+<summary>Show/Hide</summary>
 - Install Docker Desktop from here.
 - Install Minikube from here.
 - Install kubectl from here.
+</details>
 
 #### macOS
+<details>
+<summary>Show/Hide</summary>
 - Install Docker Desktop from here.
 - Install Minikube using Homebrew
 ```
@@ -92,10 +112,15 @@ minikube start
 ```
 brew install kubectl
 ```
+</details>
+
 #### Linux
+<details>
+<summary>Show/Hide</summary>
 - Install Docker from here.
 - Install Minikube from here.
 - Install kubectl from here.
+</details>
 
 ### Step 1: Clone the Repository
 ```

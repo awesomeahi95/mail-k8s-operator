@@ -207,7 +207,7 @@ Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
 Version: v0.15.0
 ```
 
-<details>
+</details>
 
 <a name="Instructions_to_Deploy_Operator"></a>
 ## Instructions to Deploy Operator

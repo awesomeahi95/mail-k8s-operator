@@ -148,7 +148,7 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 ├── mailersend-secret-token.yaml
 ├── main.go
 └── manager
-
+```
 
 </details>
 

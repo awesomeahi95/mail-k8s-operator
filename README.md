@@ -118,8 +118,8 @@ mailer-operator/
 <summary>Show/Hide</summary>
 
 - Install Docker Desktop from [here](https://docs.docker.com/desktop/install/windows-install/).
-- Install Minikube from here.
-- Install kubectl from here.
+- Install Minikube from [here](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download).
+- Install kubectl from [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/).
 
 </details>
 
@@ -127,16 +127,9 @@ mailer-operator/
 <details>
 <summary>Show/Hide</summary>
 
-- Install Docker Desktop from here.
-- Install Minikube using Homebrew
-```
-brew install minikube
-minikube start
-```
-- Install kubectl using Homebrew:
-```
-brew install kubectl
-```
+- Install Docker Desktop from [here](https://docs.docker.com/desktop/install/mac-install/).
+- Install Minikube from [here](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinary+download).
+- Install kubectl from [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/).
 
 </details>
 
@@ -144,9 +137,9 @@ brew install kubectl
 <details>
 <summary>Show/Hide</summary>
 
-- Install Docker from here.
-- Install Minikube from here.
-- Install kubectl from here.
+- Install Docker from [here](https://docs.docker.com/desktop/install/linux-install/).
+- Install Minikube from [here](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download).
+- Install kubectl from [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
 
 </details>
 

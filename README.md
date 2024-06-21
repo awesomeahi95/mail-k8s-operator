@@ -13,9 +13,9 @@
 - [Detailed Step-by-Step Instructions](#Detailed_Step-by-Step_Instructions)
 </details>
 
+<a name="Task"></a>
 ## Task
 <details open>
-<a name="Task"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -23,9 +23,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 
 </details>
 
+<a name="Achieved_Goals"></a>
 ## Achieved Goals
 <details open>
-<a name="Achieved_Goals"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -36,9 +36,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Tested the email sending functionality with MailerSend.
 </details>
 
+<a name="What_Can_Be_Improved"></a>
 ## What Can Be Improved
 <details open>
-<a name="What_Can_Be_Improved"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -49,9 +49,9 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 - Optimize the Docker image for smaller size and faster deployment.
 </details>
 
+<a name="Important_Files"></a>
 ## Important Files
 <details>
-<a name="Important_Files"></a>
 <summary>Show/Hide</summary>
 <br>
 
@@ -101,11 +101,11 @@ mailer-operator/
 
 </details>
 
+<a name="Detailed_Step-by-Step_Instructions"></a>
 ## Detailed Step-by-Step Instructions
 <details open>
-<a name="Detailed_Step-by-Step_Instructions"></a>
 <summary>Show/Hide</summary>
-
+<br>
 
 ### Prerequisites
 - Docker
@@ -116,7 +116,7 @@ mailer-operator/
 #### - Windows
 <details>
 <summary>Show/Hide</summary>
-- Install Docker Desktop from here.
+- Install Docker Desktop from [here](https://docs.docker.com/desktop/install/windows-install/).
 - Install Minikube from here.
 - Install kubectl from here.
 </details>

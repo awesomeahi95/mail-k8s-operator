@@ -116,9 +116,11 @@ mailer-operator/
 #### - Windows
 <details>
 <summary>Show/Hide</summary>
+
 - Install Docker Desktop from [here](https://docs.docker.com/desktop/install/windows-install/).
 - Install Minikube from here.
 - Install kubectl from here.
+
 </details>
 
 #### - macOS

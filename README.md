@@ -13,10 +13,9 @@
 - [Detailed Step-by-Step Instructions](#Detailed_Step-by-Step_Instructions)
 </details>
 
-<a name="Task"></a>
-
 ## Task
 <details open>
+<a name="Task"></a>
 <summary>Show/Hide</summary>
 <br>
 

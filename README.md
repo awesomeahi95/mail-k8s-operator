@@ -10,6 +10,7 @@
 - [What Can be Improved](#What_Can_Be_Improved)
 - [Important Files](#Important_Files)
 - [Files Directory Tree](#Files_Directory_Tree)
+- [Tools and Versions Used](#Tools_and_Versions_Used)
 - [Instructions to Deploy Operator](#Instructions_to_Deploy_Operator)
 </details>
 
@@ -168,6 +169,45 @@ Create a Kubernetes operator that manages custom resources for configuring email
 ```
 
 </details>
+
+a name="Tools_and_Versions_Used"></a>
+## Tools and Versions Used
+<details open>
+<summary>Show/Hide</summary>
+<br>
+
+### Docker
+
+```
+Docker version: 24.0.7
+```
+
+### Go
+
+```
+go version: go1.22.4 linux/amd64
+```
+
+### Minikube
+
+```
+minikube version: v1.33.1
+```
+
+### Kubectl
+
+```
+Client Version: v1.30.2
+Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
+```
+
+### controller-gen
+
+```
+Version: v0.15.0
+```
+
+<details>
 
 <a name="Instructions_to_Deploy_Operator"></a>
 ## Instructions to Deploy Operator

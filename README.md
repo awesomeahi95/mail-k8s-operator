@@ -73,32 +73,14 @@ The purpose of this task is to create a Kubernetes operator to manage email send
 <summary>Show/Hide</summary>
 <br>
 
-*mailer-operator/
-    *api/
-        *v1/
-            *email_types.go
-            *emailsenderconfig_types.go
-            *groupversion_info.go
-            *zz_generated.deepcopy.go
-│   ├── crd/
-│   │   └── bases/
-│   │       ├── email.mailerlitetask.com_emails.yaml
-│   │       └── email.mailerlitetask.com_emailsenderconfigs.yaml
-│   ├── manager/
-│   │   └── manager.yaml
-│   ├── rbac/
-│   │   ├── role.yaml
-│   │   ├── role_binding.yaml
-│   │   └── service_account.yaml
-│   └── test/
-│       ├── mailersend_email.yaml
-│       └── mailersend_emailsenderconfig.yaml
-├── controllers/
-│   └── email_controller.go
-├── Dockerfile
-├── go.mod
-├── go.sum
-└── main.go
+mailer-operator/
+    api/
+        v1/
+            email_types.go
+            emailsenderconfig_types.go
+            groupversion_info.go
+            zz_generated.deepcopy.go
+
 
 </details>
 
